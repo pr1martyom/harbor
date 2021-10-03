@@ -1,12 +1,14 @@
 Harbor
 
 ```
-helm repo add bitnami https://charts.bitnami.com/bitnami
+git clone https://github.com/pr1martyom/harbor.git harbor
 
-kubectl create ns harbor
+cd harbor
 
-helm upgrade --install harbor -n harbor --set expose.ingress.hosts.core= \  # harbor domain
-  --set expose.ingress.hosts.notary=  \  # notary domain
-  --set harborAdminPassword: "" \ # admin pass
-  bitnami/harbor
+helm upgrade --install harbor -n harbor --set expose.ingress.hosts.core=harbor.domain.com \
+  --set expose.ingress.hosts.notary=notary.domain.com  \
+  --set harborAdminPassword: "changeme" .
+
+# Need to change harbor.domain, notary.domain and harborAdminPassword
 ```
+
