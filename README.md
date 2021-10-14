@@ -12,3 +12,14 @@ helm -n harbor upgrade --install harbor --set expose.tls.enabled=false  --set ex
 # Need to change harbor.domain, notary.domain and harborAdminPassword
 ```
 
+
+```
+add ingressClassName: nginx-controller
+
+example:
+
+spec:
+  ingressClassName: nginx-controller
+  rules:
+```
+
